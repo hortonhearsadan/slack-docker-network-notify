@@ -50,6 +50,7 @@ def is_correct_country(d, country):
 def main():
     sleep_time = settings.period
     client = docker.from_env()
+    print(settings)
     while True:
         connected_status, correct_country_status = get_statuses(client)
         print(correct_country_status)
@@ -72,7 +73,7 @@ def format_msg(status, message):
 
 
 def get_statuses(client):
-    targets = set(settings.check_country or [] + settings.check_country or [])
+    targets = set(settings.check_country + settings.check_country)
 
     if not targets:
         print("no targets set, please set correct env vars")
