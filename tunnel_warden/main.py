@@ -63,7 +63,7 @@ def main():
                 f"Containers not connected to {settings.country}",
             )
 
-        sleep(sleep_time)
+        sleep(int(sleep_time))
 
 
 def format_msg(status, message):
