@@ -1,0 +1,11 @@
+services:
+  warden:
+    build: ./
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      CHECK_ALIVE: "api,hello_world"
+      CHECK_COUNTRY: "api"
+      COUNTRY: "US"
+      SLACK_WEBHOOK: ""
+      PERIOD: 180
